@@ -54,6 +54,9 @@
     --clr-surface: hsl(0 0% 100%);
     --clr-background: oklch(0.98 0.01 300);
 
+    --clr-black: hsl(0 5% 5%);
+    --clr-white: hsl(0 5% 95%);
+    
     --clr-text: hsl(270 15% 5%);
     --clr-text-muted : hsl(270 15% 30%);
 
