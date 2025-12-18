@@ -1,0 +1,701 @@
+:root {
+    /****************** Font sizes ************/
+    --fs-000: clamp(0.5277rem, 0.7015rem + -0.2242vw, 0.651rem);
+    --fs-100: clamp(0.7035rem, 0.8131rem + -0.1414vw, 0.7813rem);
+    --fs-200: clamp(0.9375rem, 0.9374rem + 0.0004vw, 0.9377rem);
+    --fs-300: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+    --fs-400: clamp(1.35rem, 1.2206rem + 0.575vw, 1.6663rem);
+    --fs-500: clamp(1.62rem, 1.3741rem + 1.0929vw, 2.2211rem);
+    --fs-600: clamp(1.944rem, 1.5281rem + 1.8486vw, 2.9607rem);
+    --fs-700: clamp(2.3328rem, 1.6726rem + 2.9343vw, 3.9467rem);
+    --fs-800: clamp(2.7994rem, 1.7924rem + 4.4755vw, 5.2609rem);
+
+    /****************** Paddings ************/
+    --padding-0: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+    --padding-1: clamp(0.5625rem, 0.5369rem + 0.1136vw, 0.625rem);
+    --padding-2: clamp(0.875rem, 0.8494rem + 0.1136vw, 0.9375rem);
+    --padding-3: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+    --padding-4: clamp(1.6875rem, 1.6108rem + 0.3409vw, 1.875rem);
+    --padding-5: clamp(2.25rem, 2.1477rem + 0.4545vw, 2.5rem);
+    --padding-6: clamp(3.375rem, 3.2216rem + 0.6818vw, 3.75rem);
+    --padding-7: clamp(4.5rem, 4.2955rem + 0.9091vw, 5rem);
+    --padding-8: clamp(6.75rem, 6.4432rem + 1.3636vw, 7.5rem);
+
+    /****************** Margins and gaps ************/
+    --gap-0: clamp(0.3125rem, 0.1847rem + 0.5682vw, 0.625rem);
+    --gap-1: clamp(0.5625rem, 0.4091rem + 0.6818vw, 0.9375rem);
+    --gap-2: clamp(0.875rem, 0.7216rem + 0.6818vw, 1.25rem);
+    --gap-3: clamp(1.125rem, 0.8182rem + 1.3636vw, 1.875rem);
+    --gap-4: clamp(1.6875rem, 1.3551rem + 1.4773vw, 2.5rem);
+    --gap-5: clamp(2.25rem, 1.6364rem + 2.7273vw, 3.75rem);
+    --gap-6: clamp(3.375rem, 2.7102rem + 2.9545vw, 5rem);
+    --gap-7: clamp(4.5rem, 3.2727rem + 5.4545vw, 7.5rem);
+    --gap-8: clamp(6.75rem, 4.9091rem + 8.1818vw, 11.25rem);
+    --gap-9: clamp(10.125rem, 8.1307rem + 8.8636vw, 15rem);
+    --gap-10: clamp(13.5rem, 11.3523rem + 9.5455vw, 18.75rem);
+
+    /****************** Colors ************/
+    /*--clr-background: hsl(270 15% 5%);
+    --clr-surface: hsl(270 15% 10%);
+    --clr-surface-alt: hsl(270 15% 15%);
+
+    --clr-text: hsl(270 15% 95%);
+    --clr-text-muted : hsl(270 15% 70%);
+
+    --clr-black: hsl(0 5% 5%);
+    --clr-white: hsl(0 5% 95%);
+    --clr-accent: hsl(180 71% 45%);
+    --clr-primary: hsl(270 71% 45%);
+
+    --clr-border: hsl(270 15% 20%);
+    --clr-container: hsl(270 17% 88%);*/
+
+    --clr-surface-alt: hsl(270 25% 75%);
+    --clr-surface: hsl(0 0% 100%);
+    --clr-background: oklch(0.98 0.01 300);
+
+    --clr-text: hsl(270 15% 5%);
+    --clr-text-muted : hsl(270 15% 30%);
+
+    --clr-accent: oklch(0.75 0.1358 180);
+    --clr-primary: oklch(0.75 0.15 300);
+
+    --clr-border: hsl(270 15% 80%);
+
+    /****************** Shadows ************/
+    --shadow-light:
+    0 2px 4px hsl(0 0% 0% / 0.10),
+    0 0 6px hsl(0 0% 0% / 0.06);
+
+    --shadow-medium:
+    0 4px 8px hsl(0 0% 0% / 0.12),
+    0 0 12px hsl(0 0% 0% / 0.08);
+
+    --shadow-high:
+    0 8px 16px hsl(0 0% 0% / 0.16),
+    0 0 24px hsl(0 0% 0% / 0.10);
+}
+
+@layer reset, base, layout, utilities;
+
+@layer reset {
+    *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        font: inherit;
+        box-sizing: border-box;
+    }
+    
+    html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+        font-family: inter, sans-serif;
+    }
+    
+    body {
+        min-height: 100dvh;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.2;
+        text-wrap: balance;
+    }
+    
+    p, span {
+        line-height: 1.6;
+        text-wrap: pretty;
+        color: var(--clr-text-muted);
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+        color: var(--clr-black);
+    }
+    
+    button {
+        border: none;
+        cursor: pointer;
+        background: none;
+    }
+    
+    input, textarea, select {
+        border: none;
+        outline: none;
+        color: inherit;
+        background: none;
+    }
+    
+    img, video, picture, svg {
+        height: auto;
+        display: block;
+        max-width: 100%;
+    }
+}
+
+@layer base {
+    body {
+        color: var(--clr-text);
+        background-color: var(--clr-background);
+    }
+
+    /****************************************** HEADER **************************/
+    header .wrapper {
+        border-radius: .5rem;
+        box-shadow: var(--shadow-light);
+        background-color: var(--clr-surface);
+
+        @supports (corner-shape: squircle) {
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
+    }
+
+    .nav-link {
+        font-size: var(--fs-200);
+    }
+
+    .nav-link:hover, .nav-link:active {
+        color: var(--clr-accent);
+    }
+
+    @media (width < 750px) {
+        .menu {
+            box-shadow: var(--shadow-light);
+            background-color: var(--clr-background);
+        }
+    }
+    /****************************************** HEADER **************************/
+
+    /****************************************** SECTIONS **************************/
+    :has(> .img-wrapper) > [class*="-content"] {
+        border-radius: .5rem;
+        box-shadow: var(--shadow-light);
+        background-color: var(--clr-surface);
+        padding: var(--padding-4) var(--padding-4);
+
+        @supports (corner-shape: squircle) {
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
+    }
+    /****************************************** SECTIONS **************************/
+
+    /****************************************** HERO SECTION **************************/
+    /****************************************** HERO SECTION **************************/
+
+    /****************************************** TARGETS SECTION **************************/
+    .target-list > li {
+        border-radius: .5rem;
+        box-shadow: var(--shadow-light);
+        background-color: var(--clr-surface);
+        padding: var(--padding-3) var(--padding-4);
+
+        @supports (corner-shape: squircle) {
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
+    }
+    /****************************************** TARGETS SECTION **************************/
+
+    /****************************************** ASSESSMENT SECTION **************************/
+    /****************************************** ASSESSMENT SECTION **************************/
+
+    /****************************************** HOW SECTION **************************/
+    .step {
+        border-radius: .5rem;
+        box-shadow: var(--shadow-light);
+        background-color: var(--clr-surface);
+        padding: var(--padding-3) var(--padding-4);
+
+        @supports (corner-shape: squircle) {
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
+    }
+
+    .step:nth-child(1) i{
+        color: oklch(0.75 0.1358 180);
+    }
+
+    .step:nth-child(2) i{
+        color: oklch(0.75 0.1358 300);
+    }
+
+    .step:nth-child(3) i{
+        color: oklch(0.75 0.1358 90);
+    }
+    
+    .step:nth-child(4) i{
+        color: oklch(0.75 0.1358 60);
+    }
+
+    .step:nth-child(5) i{
+        color: oklch(0.75 0.1358 30);
+    }
+
+    .step:nth-child(6) i{
+        color: oklch(0.75 0.1358 150);
+    }
+    /****************************************** HOW SECTION **************************/
+
+    /****************************************** CTA SECTION **************************/
+    .cta-section .wrapper {
+        border-radius: .5rem;
+        box-shadow: var(--shadow-light);
+        background-color: var(--clr-surface);
+
+        @supports (corner-shape: squircle) {
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
+    }
+    /****************************************** CTA SECTION **************************/
+
+    /****************************************** PEDAGOGY PAGE **************************/
+    .pedagogy-section .wrapper {
+        border-radius: .5rem;
+        box-shadow: var(--shadow-light);
+        background-color: var(--clr-surface);
+
+        @supports (corner-shape: squircle) {
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
+    }
+    /****************************************** PEDAGOGY PAGE **************************/
+
+    /****************************************** TEACHERS PAGE **************************/
+    .teachers-section .wrapper {
+        border-radius: .5rem;
+        box-shadow: var(--shadow-light);
+        background-color: var(--clr-surface);
+
+        @supports (corner-shape: squircle) {
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
+    }
+    /****************************************** TEACHERS PAGE **************************/
+}
+
+@layer layout {
+    /****************************************** HEADER **************************/
+    header {
+        top: 0;
+        z-index: 10;
+        position: sticky;
+        inset: var(--padding-1) auto auto auto;
+    }
+    
+    header .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: var(--padding-1);
+    }
+
+    .menu {
+        display: flex;
+        gap: var(--gap-1);
+        align-items: center;
+    }
+
+    @media (width > 750px) {
+        .open-menu, .close-menu {
+            display: none;
+        }
+    }
+
+    @media (width < 750px) {
+        .menu {
+            z-index: 10;
+            inset: 0 0 auto 0;
+            position: absolute;
+            translate: 0 -150%;
+
+            padding-block: var(--padding-7);
+
+            display: flex;
+            gap: var(--gap-4);
+            flex-direction: column;
+        }
+
+        .menu.show {
+            translate: 0 calc(0px - var(--padding-1));
+        }
+    }
+    /****************************************** HEADER **************************/
+
+    /****************************************** SECTIONS **************************/
+    section + section {
+        margin-top: var(--gap-7);
+    }
+
+    .wrapper {
+        padding-block: var(--gap-5);
+    }
+
+    @media (max-width: 768px) {
+        .img-wrapper {
+            order: 1;
+        }
+
+        section:has(> .img-wrapper) > :not(.img-wrapper) {
+            order: 2;
+        }
+
+        :has(> .img-wrapper) > :not(.img-wrapper) {
+            order: 2;
+        }
+    }
+    /****************************************** SECTIONS **************************/
+
+    /****************************************** HERO SECTION **************************/
+    .hero-section {
+        margin-top: var(--gap-3);
+    }
+
+    .hero-section .wrapper {
+        display: grid;
+        gap: var(--gap-4);
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    }
+
+    .hero-content {
+        div {
+            display: flex;
+            gap: var(--gap-1);
+        }
+    }
+    /****************************************** HERO SECTION **************************/
+
+    /****************************************** TARGETS SECTION **************************/
+    .target-list {
+        display: grid;
+        gap: var(--gap-4);
+        grid-template-rows: auto auto auto;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+
+        & > li {
+            display: grid;
+            grid-row: span 3;
+            gap: var(--gap-0);
+            grid-template-rows: subgrid;
+        }
+    }
+    /****************************************** TARGETS SECTION **************************/
+
+    /****************************************** ASSESSMENT SECTION **************************/
+    .assessment-section .wrapper {
+        display: grid;
+        gap: var(--gap-4);
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    }
+    /****************************************** ASSESSMENT SECTION **************************/
+
+    /****************************************** HOW SECTION **************************/
+    .step-list {
+        display: grid;
+        gap: var(--gap-4);
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    }
+
+    .step {
+        display: flex;
+        gap: var(--gap-1);
+        flex-direction: column;
+    }
+    /****************************************** HOW SECTION **************************/
+
+    /****************************************** PAYMENT SECTION **************************/
+    .payment-section .wrapper {
+        display: grid;
+        gap: var(--gap-4);
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    }
+    /****************************************** PAYMENT SECTION **************************/
+
+    /****************************************** PROGRESS SECTION **************************/
+    .progress-section .wrapper {
+        display: grid;
+        gap: var(--gap-4);
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    }
+    /****************************************** PROGRESS SECTION **************************/
+
+    /****************************************** ENGAGEMENT SECTION **************************/
+    .engagement-section .wrapper {
+        display: grid;
+        gap: var(--gap-4);
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    }
+    /****************************************** ENGAGEMENT SECTION **************************/
+
+    /****************************************** CTA SECTION **************************/
+    .cta-section .wrapper {
+        display: flex;
+        gap: var(--gap-2);
+        align-items: center;
+        flex-direction: column;
+
+        div {
+            display: flex;
+            gap: var(--gap-2);
+        }
+    }
+    /****************************************** CTA SECTION **************************/
+
+    /****************************************** FOOTER **************************/
+    footer {
+        margin-top: var(--gap-7);
+    }
+
+    footer .wrapper {
+        display: grid;
+        gap: var(--gap-4) var(--gap-2);
+        padding-block: var(--padding-7);
+        grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    }
+
+    .footer-link-list {
+        display: flex;
+        gap: var(--gap-0);
+        flex-direction: column;
+
+        a {
+            color: var(--clr-text-muted);
+            font-size: calc((var(--fs-100) + var(--fs-200)) / 2);
+        }
+    }
+    /****************************************** FOOTER **************************/
+
+    /****************************************** HOW PAGE **************************/
+    .steps-section:first-of-type {
+        padding-block: 0;
+        margin-top: var(--gap-5);
+    }
+
+    .steps-section:first-of-type + .steps-section {
+        margin-top: 0;
+    }
+
+    .steps-section .wrapper {
+        display: grid;
+        gap: var(--gap-4);
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    }
+    /****************************************** HOW PAGE **************************/
+
+    /****************************************** PEDAGOGY PAGE **************************/
+    .pedagogy-section:first-of-type {
+        margin-top: var(--gap-5);
+    }
+
+    .pedagogy-section + .pedagogy-section {
+        margin-block: var(--gap-7);
+    }
+
+    .pedagogy-section {
+        max-width: clamp(65ch, 70vw, 90ch);
+        margin-inline: auto;
+    }
+    /****************************************** PEDAGOGY PAGE **************************/
+
+    /****************************************** TEACHERS PAGE **************************/
+    .teachers-section:first-of-type {
+        margin-top: var(--gap-5);
+    }
+
+    .teachers-section + .teachers-section {
+        margin-block: var(--gap-7);
+    }
+
+    .teachers-section {
+        max-width: clamp(65ch, 70vw, 90ch);
+        margin-inline: auto;
+    }
+    /****************************************** TEACHERS PAGE **************************/
+}
+
+@layer utilities {
+    /****************************************** STRUCTURE **************************/
+    .flow > * + * {
+        margin-top: var(--gap-2);
+    }
+
+    .flow-xs > * + * {
+        margin-top: var(--gap-0);
+    }
+
+    .flow-sm > * + * {
+        margin-top: var(--gap-1);
+    }
+
+    .flow-md > * + * {
+        margin-top: var(--gap-3);
+    }
+
+    .flow-lg > * + * {
+        margin-top: var(--gap-4);
+    }
+
+    .wrapper {
+        margin-inline: auto;
+        padding-inline: var(--padding-2);
+        width: min(1024px, 100% - var(--padding-2));
+    }
+    /*********************** STRUCTURE**************************/
+
+
+    /*********************** TYPOGRAPHY**************************/
+    .text {
+        font-size: var(--fs-300);
+    }
+
+    .text-xs {
+        font-size: var(--fs-100);
+    }
+
+    .text-xm {
+        font-size: calc((var(--fs-100) + var(--fs-200)) / 2);
+    }
+
+    .text-sm {
+        font-size: var(--fs-200);
+    }
+
+    .text-xd {
+        font-size: calc((var(--fs-200) + var(--fs-300)) / 2);
+    }
+
+    .text-md {
+        font-size: var(--fs-400);
+    }
+
+    .text-lg {
+        font-size: var(--fs-500);
+    }
+
+    .text-xl {
+        font-size: var(--fs-600);
+    }
+
+    .text-2xl {
+        font-size: var(--fs-700);
+    }
+
+    .text-3xl {
+        font-size: var(--fs-800);
+    }
+
+    .text-lead {
+        color: var(--clr-text);
+    }
+
+    .text-muted {
+        color: var(--clr-text-muted);
+    }
+
+    .text-center {
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .text-short {
+        max-width: 70ch;
+    }
+
+    .text-bold {
+        font-weight: 600;
+    }
+
+    .text-bolder {
+        font-weight: 700;
+    }
+    /*********************** TYPOGRAPHY**************************/
+
+    /*********************** BUTTONS**************************/
+    .btn, .btn-sm, .btn-lg {
+        border-radius: .5rem;
+        display: inline-block;
+    }
+
+    .btn {
+        padding: var(--padding-1) var(--padding-2);
+        font-size: calc((var(--fs-100) + var(--fs-200)) / 2);
+    }
+
+    .btn-sm {
+        font-size: var(--fs-100);
+        padding: var(--padding-1) var(--padding-1);
+    }
+
+    .btn-lg {
+        font-size: var(--fs-200);
+        padding: var(--padding-2) var(--padding-3);
+    }
+
+    .btn-primary {
+        color: var(--clr-black);
+        background-color: var(--clr-primary);
+        transition: background-color 0.2s, color 0.2s;
+
+        * {
+            color: var(--clr-white);
+        }
+    }    
+
+    .btn-secondary {
+        color: var(--clr-black);
+        outline: 1px solid var(--clr-black);
+        transition: background-color 0.2s, color 0.2s;
+
+        * {
+            color: var(--clr-black);
+        }
+    }
+
+    .btn-primary:hover, .btn-secondary:hover {
+        outline: none;
+        color: var(--clr-white);
+        background-color: var(--clr-accent);
+
+        * {
+            color: var(--clr-white);
+        }
+    }
+
+    .link-alt {
+        border: none;
+        outline: none;
+        text-decoration: none;
+        color: var(--clr-black);
+    }
+
+    .link-alt {
+        color: var(--clr-primary);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: color 0.2s;
+    }
+
+    .link:hover, .link-alt:hover {
+        text-decoration: none;
+        color: var(--clr-accent);
+    }
+
+    .accent {
+        color: var(--clr-primary);
+    }
+    /*********************** BUTTONS**************************/
+}
