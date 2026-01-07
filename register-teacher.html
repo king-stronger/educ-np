@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUC NP</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <h1 class="text text-bold">EDUC-NP</h1>
+
+            <nav>
+                <ul class="menu" id="menu">
+                    <li class="close-menu" id="close-menu">
+                        <a href="#" class="nav-link ri-close-large-line" aria-label="close menu"></a>
+                    </li>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="how.html" class="nav-link">Comment ca marche ?</a></li>
+                    <li><a href="about.html" class="nav-link">A propos</a></li>
+                    <li><a href="register-parent.html" class="btn btn-primary">Inscrire mon enfant</a></li>
+                    <li><a href="register-teacher.html" class="btn btn-secondary">Devenir professeur</a></li>
+                </ul>
+                <button class="nav-link open-menu" id="open-menu">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="form-section">
+        <div class="wrapper">
+            <form class="form flow-md">
+                <h2 class="text text-bold text-center">Devenir professeur</h2>
+
+                <div class="form-group">
+                    <label class="text-sm text-bold" for="name">Nom Complet</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                
+                <div class="flow-sm">
+                    <h3>Choisissez les matières que vous enseignez</h3>
+
+                    <div class="form-group">
+                        <label class="text-xm" for="maths">
+                            <input type="checkbox" name="maths">
+                            Mathématique
+                        </label>
+                        <label class="text-xm" for="physics">
+                            <input type="checkbox" name="physics">
+                            Physique
+                        </label>
+                        <label class="text-xm" for="chemistry">
+                            <input type="checkbox" name="chemistry">
+                            Chimie
+                        </label>
+                        <label class="text-xm" for="history">
+                            <input type="checkbox" name="history">
+                            Histoire
+                        </label>
+                        <label class="text-xm" for="geography">
+                            <input type="checkbox" name="geography">
+                            Géographie
+                        </label>
+                        <label class="text-xm" for="biology">
+                            <input type="checkbox" name="biology">
+                            Biologie
+                        </label>
+                        <label class="text-xm" for="economy">
+                            <input type="checkbox" name="economy">
+                            Economie
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="text-sm text-bold" for="experience">Années d'expérience</label>
+                    <select name="subject" id="subject">
+                        <option value="6">6 mois</option>
+                        <option value="12">1 an</option>
+                        <option value="24">2 ans</option>
+                        <option value="36">Plus de 3 ans</option>
+                        <option value="60">Plus de 5 ans</option>
+                        <option value="120">Plus de 10 ans</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="text-sm text-bold" for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <div class="form-group">
+                    <label class="text-sm text-bold" for="phone">Téléphone</label>
+                    <input type="text" name="phone" id="phone">
+                </div>
+
+                <div class="form-group">
+                    <label class="text-sm text-bold" for="cv">Votre CV</label>
+                    <input type="file" name="cv" id="cv">
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrapper">
+            <div class="about flow-xs">
+                <h3 class="text-sm text-bolder">À propos d’EDUC-NP</h3>
+                <p class="text-xm">
+                    EDUC-NP est une plateforme d’accompagnement scolaire qui met en relation des parents et des enseignants qualifiés après une évaluation pédagogique de l’élève
+                </p>
+            </div>
+
+            <div class="services flow-xs">
+                <h3 class="text-sm text-bolder">Nos services</h3>
+                <div class="footer-link-list">
+                    <a href="#" class="link">Évaluation pédagogique des élèves</a>
+                    <a href="#" class="link">Mise en relation parents – enseignants</a>
+                    <a href="#" class="link">Cours particuliers à domicile</a>
+                    <a href="#" class="link">Suivi de la progression scolaire</a>
+                    <a href="#" class="link">Accompagnement pédagogique</a>
+                </div>
+            </div>
+
+            <div class="quick-links flow-xs">
+                <h3 class="text-sm text-bolder">Accès rapides</h3>
+                <div class="footer-link-list">
+                    <a href="#" class="link">Accueil</a>
+                    <a href="#" class="link">Comment ça marche</a>
+                    <a href="#" class="link">A propos de nous</a>
+                    <a href="#" class="link">Inscrire son enfant</a>
+                    <a href="#" class="link">Devenir enseignant</a>
+                </div>
+            </div>
+
+            <div class="contact flow-xs" id="contact">
+                <h3 class="text-sm text-bolder">Contact</h3>
+                <p class="social-links text">
+                    <a href="#" aria-label="Facebook contact" class="link ri-facebook-circle-fill"></a>
+                    <a href="#" aria-label="LinkedIn contact" class="link ri-linkedin-box-fill"></a>
+                    <a href="#" aria-label="Twitter contact" class="link ri-twitter-x-fill"></a>
+                </p>
+                <p class="text-xm">
+                    <span>Email:</span>
+                    <a href="#" class="link">educnp@gmail.com</a>
+                </p>
+                <p class="text-xm">
+                    <span>Téléphone:</span>
+                    <a href="#" class="link">+223 69 00 50 00</a>
+                </p>
+                <p class="text-xm">
+                    <span>Localisation:</span>
+                    <span class="text-lead">Bamako, Mali</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
