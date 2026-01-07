@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
 :root {
     /****************** Font sizes ************/
     --fs-000: clamp(0.5277rem, 0.7015rem + -0.2242vw, 0.651rem);
@@ -35,33 +37,18 @@
     --gap-10: clamp(13.5rem, 11.3523rem + 9.5455vw, 18.75rem);
 
     /****************** Colors ************/
-    /*--clr-background: hsl(270 15% 5%);
-    --clr-surface: hsl(270 15% 10%);
-    --clr-surface-alt: hsl(270 15% 15%);
-
-    --clr-text: hsl(270 15% 95%);
-    --clr-text-muted : hsl(270 15% 70%);
-
-    --clr-black: hsl(0 5% 5%);
-    --clr-white: hsl(0 5% 95%);
-    --clr-accent: hsl(180 71% 45%);
-    --clr-primary: hsl(270 71% 45%);
-
-    --clr-border: hsl(270 15% 20%);
-    --clr-container: hsl(270 17% 88%);*/
-
     --clr-surface-alt: hsl(270 25% 75%);
-    --clr-surface: hsl(0 0% 100%);
-    --clr-background: oklch(0.98 0.01 300);
+    --clr-surface: oklch(1 0 300);
+    --clr-background: oklch(0.99 0.01 90);
 
     --clr-black: hsl(0 5% 5%);
     --clr-white: hsl(0 5% 95%);
-    
+
     --clr-text: hsl(270 15% 5%);
     --clr-text-muted : hsl(270 15% 30%);
 
-    --clr-accent: oklch(0.75 0.1358 180);
     --clr-primary: oklch(0.75 0.15 300);
+    --clr-accent: oklch(0.7027 0.1434 90);
 
     --clr-border: hsl(270 15% 80%);
 
@@ -92,7 +79,7 @@
     html {
         font-size: 16px;
         scroll-behavior: smooth;
-        font-family: inter, sans-serif;
+        font-family: "Inter", sans-serif;
     }
     
     body {
@@ -146,15 +133,9 @@
     }
 
     /****************************************** HEADER **************************/
-    header .wrapper {
-        border-radius: .5rem;
+    header {
         box-shadow: var(--shadow-light);
         background-color: var(--clr-surface);
-
-        @supports (corner-shape: squircle) {
-            border-radius: 3rem;
-            corner-shape: squircle;
-        }
     }
 
     .nav-link {
@@ -168,17 +149,14 @@
     @media (width < 750px) {
         .menu {
             box-shadow: var(--shadow-light);
-            background-color: var(--clr-background);
+            background-color: var(--clr-surface);
         }
     }
     /****************************************** HEADER **************************/
 
     /****************************************** SECTIONS **************************/
-    :has(> .img-wrapper) > [class*="-content"] {
+    .img-wrapper img {
         border-radius: .5rem;
-        box-shadow: var(--shadow-light);
-        background-color: var(--clr-surface);
-        padding: var(--padding-4) var(--padding-4);
 
         @supports (corner-shape: squircle) {
             border-radius: 3rem;
@@ -195,7 +173,6 @@
         border-radius: .5rem;
         box-shadow: var(--shadow-light);
         background-color: var(--clr-surface);
-        padding: var(--padding-3) var(--padding-4);
 
         @supports (corner-shape: squircle) {
             border-radius: 3rem;
@@ -212,7 +189,6 @@
         border-radius: .5rem;
         box-shadow: var(--shadow-light);
         background-color: var(--clr-surface);
-        padding: var(--padding-3) var(--padding-4);
 
         @supports (corner-shape: squircle) {
             border-radius: 3rem;
@@ -258,30 +234,17 @@
     }
     /****************************************** CTA SECTION **************************/
 
-    /****************************************** PEDAGOGY PAGE **************************/
-    .pedagogy-section .wrapper {
-        border-radius: .5rem;
-        box-shadow: var(--shadow-light);
+    /****************************************** FOOTER **************************/
+    footer {
         background-color: var(--clr-surface);
-
-        @supports (corner-shape: squircle) {
-            border-radius: 3rem;
-            corner-shape: squircle;
-        }
     }
-    /****************************************** PEDAGOGY PAGE **************************/
+    /****************************************** FOOTER **************************/
+
+
+    /****************************************** ABOUT PAGE **************************/
+    /****************************************** ABOUT PAGE **************************/
 
     /****************************************** TEACHERS PAGE **************************/
-    .teachers-section .wrapper {
-        border-radius: .5rem;
-        box-shadow: var(--shadow-light);
-        background-color: var(--clr-surface);
-
-        @supports (corner-shape: squircle) {
-            border-radius: 3rem;
-            corner-shape: squircle;
-        }
-    }
     /****************************************** TEACHERS PAGE **************************/
 }
 
@@ -291,7 +254,7 @@
         top: 0;
         z-index: 10;
         position: sticky;
-        inset: var(--padding-1) auto auto auto;
+        inset: 0 auto auto auto;
     }
     
     header .wrapper {
@@ -391,6 +354,10 @@
             grid-template-rows: subgrid;
         }
     }
+
+    .target-list > li {
+        padding: var(--padding-3) var(--padding-4);
+    }
     /****************************************** TARGETS SECTION **************************/
 
     /****************************************** ASSESSMENT SECTION **************************/
@@ -413,6 +380,7 @@
         display: flex;
         gap: var(--gap-1);
         flex-direction: column;
+        padding: var(--padding-3) var(--padding-4);
     }
     /****************************************** HOW SECTION **************************/
 
@@ -482,15 +450,6 @@
     /****************************************** FOOTER **************************/
 
     /****************************************** HOW PAGE **************************/
-    .steps-section:first-of-type {
-        padding-block: 0;
-        margin-top: var(--gap-5);
-    }
-
-    .steps-section:first-of-type + .steps-section {
-        margin-top: 0;
-    }
-
     .steps-section .wrapper {
         display: grid;
         gap: var(--gap-4);
@@ -499,35 +458,65 @@
     }
     /****************************************** HOW PAGE **************************/
 
-    /****************************************** PEDAGOGY PAGE **************************/
-    .pedagogy-section:first-of-type {
-        margin-top: var(--gap-5);
+    /****************************************** ABOUT PAGE **************************/
+    .about-section + .about-section {
+        margin-top: var(--gap-0);
     }
-
-    .pedagogy-section + .pedagogy-section {
-        margin-block: var(--gap-7);
-    }
-
-    .pedagogy-section {
-        max-width: clamp(65ch, 70vw, 90ch);
-        margin-inline: auto;
-    }
-    /****************************************** PEDAGOGY PAGE **************************/
+    /****************************************** ABOUT PAGE **************************/
 
     /****************************************** TEACHERS PAGE **************************/
-    .teachers-section:first-of-type {
-        margin-top: var(--gap-5);
-    }
-
     .teachers-section + .teachers-section {
-        margin-block: var(--gap-7);
-    }
-
-    .teachers-section {
-        max-width: clamp(65ch, 70vw, 90ch);
-        margin-inline: auto;
+        margin-top: var(--gap-0);
     }
     /****************************************** TEACHERS PAGE **************************/
+}
+
+@layer components {
+    .form {
+        margin-inline: auto;
+        width: min(100%, 500px);
+
+        border-radius: .5rem;
+        padding: var(--padding-5) var(--padding-4);
+        background-color: var(--clr-surface);
+
+        @supports (corner-shape: squircle) {
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
+    }
+
+    .form-group {
+        display: grid;
+        row-gap: var(--gap-0);
+        grid-template-columns: 1fr;
+    }
+
+    input:not([type="radio"]):not([type="checkbox"]), select, textarea {
+        font-weight: 300;
+        border-radius: .5rem;
+        font-size: var(--fs-200);
+        outline: 1px solid var(--clr-border);
+        padding: var(--padding-0) var(--padding-1);
+
+        @supports (corner-shape: squircle) {
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
+    }
+
+    :is(input:not([type="radio"]):not([type="checkbox"]), select, textarea):hover {
+        box-shadow: var(--shadow-light);
+    }
+
+    :is(input:not([type="radio"]):not([type="checkbox"]), select, textarea):focus {
+        box-shadow: var(--shadow-medium);
+    }
+
+    .form-buttons {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @layer utilities {
@@ -619,11 +608,11 @@
     }
 
     .text-bold {
-        font-weight: 600;
+        font-weight: 500;
     }
 
     .text-bolder {
-        font-weight: 700;
+        font-weight: 600;
     }
     /*********************** TYPOGRAPHY**************************/
 
@@ -631,6 +620,11 @@
     .btn, .btn-sm, .btn-lg {
         border-radius: .5rem;
         display: inline-block;
+
+        @supports (corner-shape: squircle) {
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
     }
 
     .btn {
@@ -654,7 +648,7 @@
         transition: background-color 0.2s, color 0.2s;
 
         * {
-            color: var(--clr-white);
+            color: var(--clr-black);
         }
     }    
 
