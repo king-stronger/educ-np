@@ -48,6 +48,8 @@
     --clr-text-muted : hsl(270 15% 30%);
 
     --clr-primary: oklch(0.75 0.15 300);
+    --clr-primary-alt: oklch(0.75 0.15 150);
+    --clr-secondary-alt: oklch(0.75 0.15 240);
     --clr-accent: oklch(0.7027 0.1434 90);
 
     --clr-border: hsl(270 15% 80%);
@@ -320,6 +322,30 @@
     }
     /****************************************** SECTIONS **************************/
 
+
+    /****************************************** INDEX SECTION **************************/
+    .index-section {
+        margin-top: var(--gap-3);
+    }
+
+    .index-section .wrapper {
+        display: grid;
+        max-width: 600px;
+        gap: var(--gap-4);
+        align-items: center;
+        grid-template-columns: 1fr;
+    }
+
+    .index-content {
+        div {
+            display: flex;
+            gap: var(--gap-1);
+            justify-content: center;
+        }
+    }
+    /****************************************** INDEX SECTION **************************/
+
+
     /****************************************** HERO SECTION **************************/
     .hero-section {
         margin-top: var(--gap-3);
@@ -477,8 +503,9 @@
         width: min(100%, 500px);
 
         border-radius: .5rem;
-        padding: var(--padding-5) var(--padding-4);
+        box-shadow: var(--shadow-light);
         background-color: var(--clr-surface);
+        padding: var(--padding-5) var(--padding-4);
 
         @supports (corner-shape: squircle) {
             border-radius: 3rem;
@@ -642,27 +669,32 @@
         padding: var(--padding-2) var(--padding-3);
     }
 
-    .btn-primary {
+    :is(.btn-primary, .btn-primary-alt, .btn-secondary, .btn-secondary-alt){
         color: var(--clr-black);
-        background-color: var(--clr-primary);
         transition: background-color 0.2s, color 0.2s;
 
         * {
             color: var(--clr-black);
-        }
-    }    
-
-    .btn-secondary {
-        color: var(--clr-black);
-        outline: 1px solid var(--clr-black);
-        transition: background-color 0.2s, color 0.2s;
-
-        * {
-            color: var(--clr-black);
-        }
+        } 
     }
 
-    .btn-primary:hover, .btn-secondary:hover {
+    .btn-primary {
+        background-color: var(--clr-primary);
+    }    
+
+    .btn-primary-alt {
+        background-color: var(--clr-primary-alt);
+    }  
+
+    .btn-secondary-alt {
+        background-color: var(--clr-secondary-alt);
+    }  
+
+    .btn-secondary {
+        outline: 1px solid var(--clr-black);
+    }
+
+    :is(.btn-primary, .btn-primary-alt, .btn-secondary, .btn-secondary-alt):hover {
         outline: none;
         color: var(--clr-white);
         background-color: var(--clr-accent);
