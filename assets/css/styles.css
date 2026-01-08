@@ -137,7 +137,7 @@
     /****************************************** HEADER **************************/
     header {
         box-shadow: var(--shadow-light);
-        background-color: var(--clr-surface);
+        background-color: var(--clr-background);
     }
 
     .nav-link {
@@ -238,7 +238,7 @@
 
     /****************************************** FOOTER **************************/
     footer {
-        background-color: var(--clr-surface);
+        background-color: var(--clr-background);
     }
     /****************************************** FOOTER **************************/
 
@@ -696,6 +696,7 @@
 
     .btn-secondary {
         outline: 1px solid var(--clr-black);
+        background-color: var(--clr-surface);
     }
 
     :is(.btn-primary, .btn-primary-alt, .btn-secondary, .btn-secondary-alt):hover {
